@@ -1,6 +1,5 @@
 /*
 MPU925X.h
-
 */
 
 #ifndef MPU925X_h

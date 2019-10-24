@@ -1,7 +1,7 @@
-# MPU925X
+# MPU925X &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dylanlyu/MPU925X/blob/master/LICENSE) [![arduino version](https://img.shields.io/badge/arduino-v1.8.10-blue)] [![Build Status](https://travis-ci.org/dylanlyu/MPU925X.svg?branch=master)](https://travis-ci.org/dylanlyu/MPU925X)
 Arduino library for communicating with the [MPU-9250](https://www.invensense.com/products/motion-tracking/9-axis/mpu-9250/) and MPU-9255 nine-axis Inertial Measurement Units (IMU).
 
-***Source code base architecture source to: [Bolder Flight Systems](https://github.com/bolderflight/MPU9250) ***
+***Source code base architecture source to: [Bolder Flight Systems](https://github.com/bolderflight/MPU9250)***
 
 # Description
 The InvenSense MPU-925X is a System in Package (SiP) that combines two chips: the MPU-6500 three-axis gyroscope and three-axis accelerometer; and the AK8963 three-axis magnetometer. The MPU-925X supports I2C, up to 400 kHz, and SPI communication, up to 1 MHz for register setup and 20 MHz for data reading. The following selectable full scale sensor ranges are available:
@@ -586,7 +586,7 @@ IMU.getFifoTemperature_C(&samples,temp);
 ## <a name="sensor-orientation"></a>Sensor Orientation
 This library transforms all data to a common axis system before it is returned. This axis system is shown below. It is a right handed coordinate system with the z-axis positive down, common in aircraft dynamics.
 
-## IMG
+<img src="https://github.com/dylanlyu/MPU925X/blob/master/extras/MPU-925X-AXIS.png" alt="Common Axis System" width="250">
 
 **Caution!** This axis system is shown relative to the MPU-925X sensor. The sensor may be rotated relative to the breakout board. 
 
