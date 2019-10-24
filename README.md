@@ -1,4 +1,4 @@
-# MPU925X &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dylanlyu/MPU925X/blob/master/LICENSE) [![arduino version](https://img.shields.io/badge/arduino-v1.8.10-blue)] [![Build Status](https://travis-ci.org/dylanlyu/MPU925X.svg?branch=master)](https://travis-ci.org/dylanlyu/MPU925X)
+# MPU925X &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dylanlyu/MPU925X/blob/master/LICENSE) [![arduino version](https://img.shields.io/badge/arduino-v1.8.10-blue)](https://www.arduino.cc/en/main/software) [![Build Status](https://travis-ci.org/dylanlyu/MPU925X.svg?branch=master)](https://travis-ci.org/dylanlyu/MPU925X)
 Arduino library for communicating with the [MPU-9250](https://www.invensense.com/products/motion-tracking/9-axis/mpu-9250/) and MPU-9255 nine-axis Inertial Measurement Units (IMU).
 
 ***Source code base architecture source to: [Bolder Flight Systems](https://github.com/bolderflight/MPU9250)***
