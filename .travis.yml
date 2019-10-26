@@ -19,6 +19,6 @@ script:
   - arduino --verify --board arduino:avr:uno $PWD/examples/AdvancedI2C/AdvancedI2C.ino
   - arduino --verify --board arduino:avr:uno $PWD/examples/BasicI2C/BasicI2C.ino
   - arduino --verify --board arduino:avr:uno $PWD/examples/BasicSPI/BasicSPI.ino
-  - arduino --verify --board arduino:avr:uno $PWD/examples/FIFOSPI/FIFOSPIicSPI.ino
+  - arduino --verify --board arduino:avr:uno $PWD/examples/FIFOSPI/FIFOSPI.ino
   - arduino --verify --board arduino:avr:uno $PWD/examples/InterruptSPI/InterruptSPI.ino
   - arduino --verify --board arduino:avr:uno $PWD/examples/WOMI2C/WOMI2C.ino
