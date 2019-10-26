@@ -2,10 +2,10 @@
  * InterruptSPI.ino - Set Interrupt on SPI bus.
 **/
 
-#include "MPU9250.h"
+#include "MPU925X.h"
 
-// an MPU9250 object with the MPU-925X sensor on SPI bus 0 and chip select pin 10
-MPU9250 IMU(SPI, 10);
+// an MPU925X object with the MPU-925X sensor on SPI bus 0 and chip select pin 10
+MPU925X IMU(SPI, 10);
 int status;
 
 void setup()
@@ -29,7 +29,7 @@ void setup()
         }
     }
     // setting DLPF bandwidth to 20 Hz
-    IMU.setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ);
+    IMU.setDlpfBandwidth(MPU925X::DLPF_BANDWIDTH_20HZ);
     // setting SRD to 19 for a 50 Hz update rate
     IMU.setSrd(19);
     // enabling the data ready interrupt
