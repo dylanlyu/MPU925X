@@ -1,10 +1,11 @@
 /**
- *
-* */
+ * BasicI2C.ino - Basic settings on I2C bus.
+**/
 
 #include "MPU925X.h"
 
-MPU925X mpu9255(Wire, 0x68);
+// an MPU925X object with the MPU-925X sensor on I2C bus 0 with address 0x68
+MPU925X IMU(Wire, 0x68);
 int status;
 
 void setup()
@@ -15,12 +16,12 @@ void setup()
   {
   }
 
-  // start communication with mpu9255
-  status = mpu9255.begin();
+  // start communication with IMU
+  status = IMU.begin();
   if (status < 0)
   {
-    Serial.println("mpu9255 initialization unsuccessful");
-    Serial.println("Check mpu9255 wiring or try cycling power");
+    Serial.println("IMU initialization unsuccessful");
+    Serial.println("Check IMU wiring or try cycling power");
     Serial.print("Status: ");
     Serial.println(status);
     while (1)
@@ -32,26 +33,26 @@ void setup()
 void loop()
 {
   // read the sensor
-  mpu9255.readSensor();
+  IMU.readSensor();
   // display the data
-  Serial.print(mpu9255.getAccelX_mss(), 6);
+  Serial.print(IMU.getAccelX_mss(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getAccelY_mss(), 6);
+  Serial.print(IMU.getAccelY_mss(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getAccelZ_mss(), 6);
+  Serial.print(IMU.getAccelZ_mss(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getGyroX_rads(), 6);
+  Serial.print(IMU.getGyroX_rads(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getGyroY_rads(), 6);
+  Serial.print(IMU.getGyroY_rads(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getGyroZ_rads(), 6);
+  Serial.print(IMU.getGyroZ_rads(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getMagX_uT(), 6);
+  Serial.print(IMU.getMagX_uT(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getMagY_uT(), 6);
+  Serial.print(IMU.getMagY_uT(), 6);
   Serial.print("\t");
-  Serial.print(mpu9255.getMagZ_uT(), 6);
+  Serial.print(IMU.getMagZ_uT(), 6);
   Serial.print("\t");
-  Serial.println(mpu9255.getTemperature_C(), 6);
+  Serial.println(IMU.getTemperature_C(), 6);
   delay(100);
 }

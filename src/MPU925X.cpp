@@ -1,6 +1,6 @@
-/*
-MPU925X.cpp
-*/
+/**
+ * MPU925X.cpp - Class file for the MPU925X Triple Axis Gyroscope & Accelerometer Arduino Library.
+**/
 
 #include "MPU925X.h"
 #include "Arduino.h"
@@ -21,7 +21,7 @@ MPU925X::MPU925X(SPIClass &bus, uint8_t csPin)
     _useSPI = true; // set to use SPI
 }
 
-/* starts communication with the MPU-9250 */
+/* starts communication with the MPU-925X */
 int MPU925X::begin()
 {
     if (_useSPI)
@@ -61,7 +61,7 @@ int MPU925X::begin()
     writeAK8963Register(AK8963_CNTL1, AK8963_PWR_DOWN);
     // reset the MPU925X
     writeRegister(PWR_MGMNT_1, PWR_RESET);
-    // wait for MPU-9250 to come back up
+    // wait for MPU-925X to come back up
     delay(1);
     // reset the AK8963
     writeAK8963Register(AK8963_CNTL2, AK8963_RESET);
@@ -450,7 +450,7 @@ int MPU925X::enableWakeOnMotion(float womThresh_mg, LpAccelOdr odr)
     writeAK8963Register(AK8963_CNTL1, AK8963_PWR_DOWN);
     // reset the MPU925X
     writeRegister(PWR_MGMNT_1, PWR_RESET);
-    // wait for MPU-9250 to come back up
+    // wait for MPU-925X to come back up
     delay(1);
     if (writeRegister(PWR_MGMNT_1, 0x00) < 0)
     { // cycle 0, sleep 0, standby 0

@@ -1,6 +1,6 @@
-/*
-MPU925X.h
-*/
+/**
+ * MPU925X.h - Header file for the MPU925X Triple Axis Gyroscope & Accelerometer Arduino Library. 
+**/
 
 #ifndef MPU925X_h
 #define MPU925X_h
