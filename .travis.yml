@@ -11,13 +11,18 @@ before_install:
   - tar xf arduino-1.8.10-linux64.tar.xz
   - sudo mv arduino-1.8.10 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+  - wget https://github.com/espressif/arduino-esp32/releases/download/1.0.4/esp32-1.0.4.zip
+  - unzip esp32-1.0.4.zip
+  - mkdir -p /usr/local/share/arduino/hardware/espressif
+  - mv esp32-1.0.4 /usr/local/share/arduino/hardware/espressif/esp32
   
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/MPU925X
 
 script:
-  - arduino --verify --board arduino:avr:uno $PWD/examples/AdvancedI2C/AdvancedI2C.ino
-  - arduino --verify --board arduino:avr:uno $PWD/examples/BasicI2C/BasicI2C.ino
-  - arduino --verify --board arduino:avr:uno $PWD/examples/BasicSPI/BasicSPI.ino
-  - arduino --verify --board arduino:avr:uno $PWD/examples/InterruptSPI/InterruptSPI.ino
-  - arduino --verify --board arduino:avr:uno $PWD/examples/WOMI2C/WOMI2C.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/AdvancedI2C/AdvancedI2C.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/BasicI2C/BasicI2C.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/BasicSPI/BasicSPI.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/FIFOSPI/FIFOSPI.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/InterruptSPI/InterruptSPI.ino
+  - arduino --verify --board espressif:esp32:d32_pro $PWD/examples/WOMI2C/WOMI2C.ino
