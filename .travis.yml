@@ -15,6 +15,7 @@ before_install:
   - unzip esp32-1.0.4.zip
   - mkdir -p /usr/local/share/arduino/hardware/espressif
   - mv esp32-1.0.4 /usr/local/share/arduino/hardware/espressif/esp32
+  - python3 /usr/local/share/arduino/hardware/espressif/esp32/tools/get.exe
   
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/MPU925X
